@@ -1,0 +1,63 @@
+.lista-usuarios {
+  max-width: 1000px;
+
+  margin: auto;
+
+  background: white;
+
+  padding: 40px;
+
+  border-radius: 20px;
+
+  box-shadow: var(--sombra);
+}
+
+.lista-usuarios h1 {
+  text-align: center;
+
+  margin-bottom: 30px;
+
+  color: #1e3c72;
+}
+
+.tabela-usuarios {
+  width: 100%;
+
+  border-collapse: collapse;
+
+  overflow: hidden;
+
+  border-radius: 15px;
+}
+
+.tabela-usuarios thead {
+  background:
+    linear-gradient(
+      135deg,
+      #1e3c72,
+      #2f80ed
+    );
+
+  color: white;
+}
+
+.tabela-usuarios th,
+.tabela-usuarios td {
+  padding: 16px;
+
+  text-align: left;
+}
+
+.tabela-usuarios tbody tr {
+  border-bottom: 1px solid #e5e7eb;
+
+  transition: 0.3s;
+}
+
+.tabela-usuarios tbody tr:hover {
+  background: #edf5ff;
+}
+
+.tabela-usuarios tbody tr:last-child {
+  border-bottom: none;
+}

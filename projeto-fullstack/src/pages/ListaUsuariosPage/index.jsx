@@ -17,7 +17,7 @@ export default function ListaUsuariosPage() {
                 toast.error('Erro ao buscar usuários:')
             }
         }
-        buscarUsuarios()
+        buscarUsuarios();
     }, [])
 
     return (
@@ -34,7 +34,7 @@ export default function ListaUsuariosPage() {
                         </tr>
                     </thead>
                     <tbody>
-                        {usuarios.map(usuario=> (
+                        {usuarios.map((usuario) => (
                             <tr key={usuario.email}> // Usamos o email como chave única, pois é improvável que haja dois usuários com o mesmo email.
                                 <td>{usuario.nome}</td>
                                 <td>{usuario.email}</td>

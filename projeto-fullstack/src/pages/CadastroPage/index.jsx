@@ -7,22 +7,25 @@ export default function CadastroPage() {
   const [nome, setNome] = useState('')
   const [email, setEmail] = useState('')
   const [senha, setSenha] = useState('')
-  const [estaEnviando, setEstaEnviando] = useState(false)
+  const [estaEnviando, setEstaEnviando] = useState(false);
 
   // limpa os campos do formulário, voltando para o estado inicial.
   function limparCamposDoFormulario() {
-    setNome('')
-    setEmail('')
-    setSenha('')
+    setNome('');
+    setEmail('');
+    setSenha('');
   }
 
   async function envioDoFormulario(event) {
 
     // Evita que a página seja recarregada automaticamente pelo navegador.
-    event.preventDefault()
+    event.preventDefault();
+
+    // Garante que nenhum elemento pai interfira na ação do formulário
+    event.stopPropagation();
     setEstaEnviando(true)
 
-    const dadosDoFormulario = { nome, email, senha }
+    const dadosDoFormulario = { nome, email, senha };
 
     try {
       // Tenta cadastrar o usuário na API.
@@ -53,7 +56,7 @@ export default function CadastroPage() {
             placeholder='Ex.: Jose Da Silva'
             value={nome}
             onChange={(e) => setNome(e.target.value)}
-            required
+            required // DICA extra: evita enviar campos vazios
           />
         </div>
         <div className="form-group">
@@ -64,6 +67,7 @@ export default function CadastroPage() {
             placeholder='Ex.: Jose@silva.com'
             value={email}
             onChange={(e) => setEmail(e.target.value)}
+            required // DICA extra: evita enviar campos vazios
           />
         </div>
         <div className="form-group">
@@ -71,9 +75,10 @@ export default function CadastroPage() {
           <input
             id="Campo-senha"
             type="password"
-            placeholder='Ex.: ********'
+            placeholder='Ex.: 123456'
             value={senha}
             onChange={(e) => setSenha(e.target.value)}
+            required // DICA extra: evita enviar campos vazios
           />
         </div>
 
@@ -83,5 +88,5 @@ export default function CadastroPage() {
 
       </form>
     </div>
-  )
+  );
 }
